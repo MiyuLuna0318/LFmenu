@@ -135,6 +135,129 @@ table {
 
 /* eric/css/reset/end */
 
+/* 字型 */
+/* 內文(黑體) */
+.ch-sans-light-s {
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    /* 增加了字距 */
+    line-height: 190%;
+    font-size: 14px;
+    /* color: #000;  body 預設為黑色*/
+}
+
+.ch-sans-light-m {
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 190%;
+    font-size: 16px;
+    /* color: #000;  body 預設為黑色*/
+}
+
+.ch-sans-thin-l {
+    /*葉形按鈕*/
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    font-size: 20px;
+    /* color: #000;  body 預設為黑色*/
+}
+
+.ch-sans-thin-xl {
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    font-size: 24px;
+    /* color: #000;  body 預設為黑色*/
+}
+
+.en-sans-light-s {
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    color: #666;
+    font-size: 12px;
+}
+
+.en-sans-light-m {
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    color: #666;
+    font-size: 14px;
+}
+
+.en-sans-light-l {
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    color: #666;
+    font-size: 20px;
+}
+
+.en-sans-light-xl {
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    color: #666;
+    font-size: 24px;
+}
+
+/* 標題(明體) */
+.serif-medium-footer {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    color: #666;
+    font-size: 20px;
+}
+
+.serif-medium-s {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 100%;
+    color: #666;
+    font-size: 24px;
+}
+
+.serif-medium-m {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 150%;
+    color: #666;
+    font-size: 32px;
+}
+
+.serif-medium-l {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 150%;
+    color: #666;
+    font-size: 44px;
+}
+
+.serif-medium-xl {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 140%;
+    color: #666;
+    font-size: 64px;
+}
+
+.serif-medium-xxl {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 120%;
+    color: #666;
+    font-size: 72px;
+}
+
 
 * {
     box-sizing: border-box;
@@ -191,6 +314,11 @@ label {
     img {
         width: 30px;
         vertical-align: middle;
+        position: fixed;
+        /* 使用固定定位 */
+        z-index: 1000;
+        right: 50px;
+
     }
 }
 
@@ -214,6 +342,12 @@ label {
     transition: .2s;
     display: block;
     width: 450px;
+    position: fixed;
+    /* 使用固定定位 */
+    z-index: 1000;
+    right: 0;
+    margin-top: 50px;
+
 
     li {
         /* border: 1px solid #000; */
@@ -223,7 +357,6 @@ label {
         a {
             display: block;
             line-height: 30px;
-            font-size: 24px;
             color: #666;
             text-align: left;
 
@@ -238,7 +371,7 @@ label {
 input:checked~.menu {
     /* 點開後:高度100vh/1000px */
     max-height: 790px;
-    max-width: 480px;
+    width: 480px;
 }
 
 .menu {
@@ -279,8 +412,12 @@ input:checked~.menu {
 }
 
 /* 英文字樣式修正 */
-li small {
+li .enText {
     display: flex;
     margin-left: 3px;
-    font-size: 12px;
+}
+
+li img {
+    margin-left: 265px;
+    width: 100px;
 }
