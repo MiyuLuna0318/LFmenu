@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@500&display=swap');
 /* eric/css/reset/ */
 html,
 body,
@@ -259,6 +259,7 @@ table {
 }
 
 
+
 * {
     box-sizing: border-box;
 }
@@ -270,7 +271,7 @@ table {
 
 a {
     text-decoration: none;
-}
+    }
 
 /* NavBar */
 nav {
@@ -285,6 +286,8 @@ nav {
         clear: both;
     }
 }
+
+
 
 #switch {
     display: none;
@@ -333,7 +336,8 @@ label {
         linear-gradient(120deg, rgba(164, 213, 190, 0.3)30%, rgba(164, 213, 190, 0)60%),
         linear-gradient(210deg, rgba(137, 209, 239, 0.3)30%, rgba(137, 209, 239, 0)60%),
         linear-gradient(340deg, rgba(238, 179, 208, 0.3)30%, rgba(238, 179, 208, 0)60%);
-    border-radius: 30px;
+    
+        border-radius: 30px;
     /* 下拉選單效果 */
     max-height: 0px;
     /* 上下左右留空 */
@@ -361,8 +365,8 @@ label {
             text-align: left;
 
             &:hover {
-                background-color: #000;
-                color: #fff;
+                /* background-color: #000; */
+                color: #000;
             }
         }
     }
@@ -418,6 +422,7 @@ li .enText {
 }
 
 li img {
-    margin-left: 265px;
+    /* margin-left: 265px; */
     width: 100px;
 }
+
