@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+/* eric/css/reset/ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* eric/css/reset/end */
+
+
+* {
+    box-sizing: border-box;
+}
+
+.menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NavBar */
+nav {
+    float: right;
+    width: 100%;
+    /* background: #eee; */
+    /* box-shadow: 10px 10px 30px #00000088; */
+
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+#switch {
+    display: none;
+}
+
+/* 未選中時的圖片 */
+label img {
+    content: url('./images/list-cloes.svg');
+    transition: transform 0.3s ease;
+}
+
+/* 選中時的圖片 */
+#switch:checked+label img {
+    content: url('./images/list-open.svg');
+    transform: rotate(90deg);
+}
+
+
+
+/* 漢堡按鈕 */
+label {
+    float: right;
+    padding-right: 50px;
+    line-height: 50px;
+    cursor: pointer;
+
+    img {
+        width: 30px;
+        vertical-align: middle;
+    }
+}
+
+/* menu*/
+.menu {
+    float: right;
+    margin-right: 35px;
+    height: auto;
+    /* 與按鈕垂直排列 */
+    clear: both;
+    background:
+        linear-gradient(120deg, rgba(164, 213, 190, 0.3)30%, rgba(164, 213, 190, 0)60%),
+        linear-gradient(210deg, rgba(137, 209, 239, 0.3)30%, rgba(137, 209, 239, 0)60%),
+        linear-gradient(340deg, rgba(238, 179, 208, 0.3)30%, rgba(238, 179, 208, 0)60%);
+    border-radius: 30px;
+    /* 下拉選單效果 */
+    max-height: 0px;
+    /* 上下左右留空 */
+    overflow: hidden;
+    /* 動畫秒數 */
+    transition: .2s;
+    display: block;
+    width: 450px;
+
+    li {
+        /* border: 1px solid #000; */
+        margin: 20px 50px;
+        text-align: left;
+
+        a {
+            display: block;
+            line-height: 30px;
+            font-size: 24px;
+            color: #666;
+            text-align: left;
+
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}
+
+input:checked~.menu {
+    /* 點開後:高度100vh/1000px */
+    max-height: 790px;
+    max-width: 480px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-container {
+    margin: 0 -50px;
+}
+
+.menu .list-container {
+    display: flex;
+    /* 將 .list-container 設置為 Flex 容器 */
+    flex-direction: row;
+    /* 將子元素水平排列 */
+}
+
+/* 底線樣式 */
+.element {
+    position: relative;
+    padding: 0 20px;
+    /* 设置左右留白的宽度 */
+    width: 100%;
+    display: inline-block;
+}
+
+.element::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    /* 底線的高度 */
+    background-color: #666;
+    /* 底線的顏色 */
+}
+
+/* 英文字樣式修正 */
+li small {
+    display: flex;
+    margin-left: 3px;
+    font-size: 12px;
+}
