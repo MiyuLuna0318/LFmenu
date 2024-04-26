@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@500&display=swap');
+
 /* eric/css/reset/ */
 html,
 body,
@@ -105,6 +106,7 @@ section {
     display: block;
 }
 
+
 body {
     line-height: 1;
 }
@@ -137,38 +139,15 @@ table {
 
 /* 字型 */
 /* 內文(黑體) */
-.ch-sans-light-s {
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    /* 增加了字距 */
-    line-height: 190%;
-    font-size: 14px;
-    /* color: #000;  body 預設為黑色*/
-}
-
-.ch-sans-light-m {
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    line-height: 190%;
-    font-size: 16px;
-    /* color: #000;  body 預設為黑色*/
-}
-
 .ch-sans-thin-l {
-    /*葉形按鈕*/
+    /* 葉形按鈕 */
     font-weight: 100;
     letter-spacing: 0.1em;
     line-height: 100%;
     font-size: 20px;
-    /* color: #000;  body 預設為黑色*/
-}
-
-.ch-sans-thin-xl {
-    font-weight: 100;
-    letter-spacing: 0.1em;
-    line-height: 100%;
-    font-size: 24px;
-    /* color: #000;  body 預設為黑色*/
+    /* 關掉葉形按鈕原設定的#000 */
+    color: #666;
+    /* color: #000; */
 }
 
 .en-sans-light-s {
@@ -177,40 +156,6 @@ table {
     line-height: 100%;
     color: #666;
     font-size: 12px;
-}
-
-.en-sans-light-m {
-    font-weight: 100;
-    letter-spacing: 0.1em;
-    line-height: 100%;
-    color: #666;
-    font-size: 14px;
-}
-
-.en-sans-light-l {
-    font-weight: 100;
-    letter-spacing: 0.1em;
-    line-height: 100%;
-    color: #666;
-    font-size: 20px;
-}
-
-.en-sans-light-xl {
-    font-weight: 100;
-    letter-spacing: 0.1em;
-    line-height: 100%;
-    color: #666;
-    font-size: 24px;
-}
-
-/* 標題(明體) */
-.serif-medium-footer {
-    font-family: "Noto Serif TC", serif;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    line-height: 100%;
-    color: #666;
-    font-size: 20px;
 }
 
 .serif-medium-s {
@@ -222,41 +167,7 @@ table {
     font-size: 24px;
 }
 
-.serif-medium-m {
-    font-family: "Noto Serif TC", serif;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    line-height: 150%;
-    color: #666;
-    font-size: 32px;
-}
-
-.serif-medium-l {
-    font-family: "Noto Serif TC", serif;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    line-height: 150%;
-    color: #666;
-    font-size: 44px;
-}
-
-.serif-medium-xl {
-    font-family: "Noto Serif TC", serif;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    line-height: 140%;
-    color: #666;
-    font-size: 64px;
-}
-
-.serif-medium-xxl {
-    font-family: "Noto Serif TC", serif;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    line-height: 120%;
-    color: #666;
-    font-size: 72px;
-}
+/* 字型設定(完) */
 
 
 
@@ -264,30 +175,14 @@ table {
     box-sizing: border-box;
 }
 
-.menu {
-    list-style: none;
-    padding-left: 0;
-}
-
-a {
-    text-decoration: none;
-    }
-
 /* NavBar */
 nav {
+    right: 30px;
     float: right;
     width: 100%;
-    /* background: #eee; */
-    /* box-shadow: 10px 10px 30px #00000088; */
-
-    &::after {
-        content: "";
-        display: block;
-        clear: both;
-    }
+    position: fixed;
+    z-index: 999;
 }
-
-
 
 #switch {
     display: none;
@@ -295,73 +190,92 @@ nav {
 
 /* 未選中時的圖片 */
 label img {
-    content: url('./images/list-cloes.svg');
-    transition: transform 0.3s ease;
+    content: url(./images/list-cloes.svg);
+    transition: transform 0.35s ease;
+    width: auto;
+
 }
 
 /* 選中時的圖片 */
 #switch:checked+label img {
-    content: url('./images/list-open.svg');
-    transform: rotate(90deg);
+    content: url(./images/list-cloes.svg);
+    transform: rotate(70deg);
+    width: auto;
 }
-
-
 
 /* 漢堡按鈕 */
 label {
+    /* position: relative; */
     float: right;
-    padding-right: 50px;
-    line-height: 50px;
-    cursor: pointer;
+    padding-top: 25px;
+
 
     img {
-        width: 30px;
-        vertical-align: middle;
-        position: fixed;
+        position: absolute;
         /* 使用固定定位 */
         z-index: 1000;
-        right: 50px;
-
+        margin: 40px 50px;
+        right: 0;
     }
 }
 
 /* menu*/
 .menu {
-    float: right;
-    margin-right: 35px;
-    height: auto;
-    /* 與按鈕垂直排列 */
-    clear: both;
+    /* 收和後，避免他全部水平排列。 */
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    /* 自動內距寬高 */
+    justify-content: space-between;
+
+    /* 背景顏色 */
     background:
         linear-gradient(120deg, rgba(164, 213, 190, 0.3)30%, rgba(164, 213, 190, 0)60%),
         linear-gradient(210deg, rgba(137, 209, 239, 0.3)30%, rgba(137, 209, 239, 0)60%),
         linear-gradient(340deg, rgba(238, 179, 208, 0.3)30%, rgba(238, 179, 208, 0)60%);
-    
-        border-radius: 30px;
-    /* 下拉選單效果 */
-    max-height: 0px;
-    /* 上下左右留空 */
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    /* background:
+        linear-gradient(120deg, rgba(164, 213, 190, 0.3)30%, rgba(164, 213, 190, 0)60%),
+        linear-gradient(210deg, rgba(137, 209, 239, 0.3)30%, rgba(137, 209, 239, 0)60%),
+        linear-gradient(340deg, rgba(238, 179, 208, 0.3)30%, rgba(238, 179, 208, 0)60%);
+    border-radius: 30px; */
+    /* 包住整個內容，不然收和後會顯示表單裡的字 */
     overflow: hidden;
-    /* 動畫秒數 */
-    transition: .2s;
-    display: block;
-    width: 450px;
-    position: fixed;
-    /* 使用固定定位 */
-    z-index: 1000;
-    right: 0;
-    margin-top: 50px;
 
+    /* 動畫秒數 */
+    transition: .5s;
+    width: 450px;
+
+
+
+    /* 使用固定定位，讓她永遠浮在畫面上 */
+    position: fixed;
+    z-index: 999;
+
+    /* 畫面靠右 */
+    right: 0;
+    margin: 30px;
 
     li {
+        /* 包住整個內容，點開後會顯示表單裡的字 */
+        overflow: hidden;
         /* border: 1px solid #000; */
-        margin: 30px 50px;
         text-align: left;
+        padding: 40px;
 
-        a {
+
+        li {
+            padding: 10px;
+        }
+
+
+        a,
+        small {
+            text-decoration: none;
             display: block;
             line-height: 30px;
-            color: #666;
             text-align: left;
 
             &:hover {
@@ -372,33 +286,42 @@ label {
     }
 }
 
-input:checked~.menu {
-    /* 點開後:高度100vh/1000px */
-    max-height: 790px;
-    width: 480px;
+
+/* 子分類的ul樣式變更 */
+ul.list-A li,
+ul.list-B li {
+    /* 圖跟字的距離 */
+    padding-left: 24px;
+    background: url(./images/ulStely.svg) no-repeat left center;
+    background-size: 13px;
 }
 
-.menu {
+input:checked~.menu {
+    /* 點開後的高度 */
+    height: 80vh;
+    max-height: 780px;
+    width: 45vh;
     display: flex;
     flex-direction: column;
 }
 
-.list-container {
-    margin: 0 -50px;
-}
+
 
 .menu .list-container {
+    /* border: 1px solid red; */
     display: flex;
-    /* 將 .list-container 設置為 Flex 容器 */
-    flex-direction: row;
-    /* 將子元素水平排列 */
 }
+
+.list-A,
+.list-B {
+    /* border: 1px solid red; */
+    flex: 1;
+}
+
 
 /* 底線樣式 */
 .element {
     position: relative;
-    padding: 0 20px;
-    /* 设置左右留白的宽度 */
     width: 100%;
     display: inline-block;
 }
@@ -410,7 +333,7 @@ input:checked~.menu {
     right: 0;
     bottom: 0;
     height: 1px;
-    /* 底線的高度 */
+    /* 底線的厚度 */
     background-color: #666;
     /* 底線的顏色 */
 }
@@ -422,7 +345,28 @@ li .enText {
 }
 
 li img {
-    /* margin-left: 265px; */
     width: 100px;
+    float: right
 }
 
+.menu .contact-link {
+    float: left;
+}
+
+/* 新添加的样式 */
+/* .glassmorphism {
+    position: absolute;
+    z-index: 998;
+    right: 0;
+    height: 80vh;
+    width: 50vh;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.85);
+    background:
+        linear-gradient(120deg, rgba(164, 213, 190, 0.3)30%, rgba(164, 213, 190, 0)60%),
+        linear-gradient(210deg, rgba(137, 209, 239, 0.3)30%, rgba(137, 209, 239, 0)60%),
+        linear-gradient(340deg, rgba(238, 179, 208, 0.3)30%, rgba(238, 179, 208, 0)60%);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    border: 3px solid #000;
+} */
