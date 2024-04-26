@@ -320,6 +320,7 @@ input:checked~.menu {
 
 
 /* 底線樣式 */
+
 .element {
     position: relative;
     width: 100%;
@@ -331,11 +332,8 @@ input:checked~.menu {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
     height: 1px;
-    /* 底線的厚度 */
-    background-color: #666;
-    /* 底線的顏色 */
+    background-color: #ccc;
 }
 
 /* 英文字樣式修正 */
