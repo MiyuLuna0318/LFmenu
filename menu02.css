@@ -237,7 +237,6 @@ header nav .label-container {
 
 header nav .label-container span {
     position: absolute;
-    /* 使用固定定位 */
     z-index: 1000;
     margin: 40px 50px;
     right: 0;
@@ -431,7 +430,7 @@ header nav .menu .contact-link {
 
 /* 小型手機 576px 以下 */
 @media (max-width: 576px) {
-    .label-container span {
+    header nav .label-container span {
         margin: 10px 15px;
     }
 
