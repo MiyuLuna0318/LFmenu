@@ -224,42 +224,41 @@ nav {
     z-index: 999;
 }
 
-#switch {
+header nav #switch {
     display: none;
 }
 
 /* 漢堡按鈕 */
-.label-container {
+header nav .label-container {
     position: relative;
     float: right;
     padding-top: 25px;
+}
 
-    span {
-        position: absolute;
-        /* 使用固定定位 */
-        z-index: 1000;
-        margin: 40px 50px;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+header nav .label-container span {
+    position: absolute;
+    /* 使用固定定位 */
+    z-index: 1000;
+    margin: 40px 50px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-
 /* 未選中時的圖片 */
-.label-container img {
+header nav .label-container span {
+    position: relative;
+}
+
+header nav .label-container img {
     content: url(./images/list-cloes.svg);
     transition: transform 0.35s ease;
     width: auto;
 }
 
-.label-container span {
-    position: relative;
-}
-
-.label-container span::after {
+header nav .label-container span::after {
     content: "Menu";
     position: absolute;
     bottom: -20px;
@@ -282,35 +281,6 @@ nav {
 #switch:checked+.label-container span::after {
     content: "Close";
 }
-
-/* menu*/
-.menu-label {
-    position: relative;
-}
-
-.menu-label img {
-    display: block;
-    /* 确保图像显示为块级元素，以便设置其宽度和高度 */
-    margin: 0 auto;
-    /* 水平居中 */
-}
-
-.menu-label::before {
-    content: "MENU";
-    display: block;
-    /* 将伪元素设置为块级元素 */
-    text-align: center;
-    /* 文本水平居中 */
-    position: absolute;
-    /* 相对于父元素 .menu-label 定位 */
-    bottom: -20px;
-    /* 距离父元素底部的距离，根据需要调整 */
-    left: 0;
-    /* 水平居中 */
-    right: 0;
-    /* 水平居中 */
-}
-
 
 .menu {
     /* 收起來時歸零 */
@@ -342,24 +312,23 @@ nav {
     right: 0;
     margin: 30px;
     padding: 0 30px;
+}
 
-    li {
-        overflow: hidden;
-        text-align: left;
+.menu li {
+    overflow: hidden;
+    text-align: left;
+}
 
-        a,
-        small {
-            text-decoration: none;
-            display: block;
-            line-height: 1.3;
-            text-align: left;
-        }
+.menu li a,
+.menu li small {
+    text-decoration: none;
+    display: block;
+    line-height: 1.3;
+    text-align: left;
+}
 
-        a:hover {
-            color: #000;
-        }
-
-    }
+.menu li a:hover {
+    color: #000;
 }
 
 input:checked~.menu {
@@ -375,55 +344,53 @@ input:checked~.menu {
 /* 子分類的ul樣式變更 */
 .menu .box-container {
     height: 20%;
-
-    .list-container {
-        /* A、B盒子從垂直變水平 */
-        display: flex;
-        height: 100%;
-
-        .list-A,
-        .list-B {
-            flex: 1;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            li {
-                /* li樣式變更 */
-                background: url(./images/ulStely.svg) no-repeat left center;
-                background-size: 13px;
-
-                /* li圖跟字的距離 */
-                padding-left: 24px;
-            }
-        }
-    }
 }
 
+.menu .box-container .list-container {
+    /* A、B盒子從垂直變水平 */
+    display: flex;
+    height: 100%;
+}
 
+.menu .box-container .list-container .list-A,
+.menu .box-container .list-container .list-B {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu .box-container .list-container .list-A li,
+.menu .box-container .list-container .list-B li {
+    /* li樣式變更 */
+    background: url(./images/ulStely.svg) no-repeat left center;
+    background-size: 13px;
+    /* li圖跟字的距離 */
+    padding-left: 24px;
+}
 
 /* 底線樣式 */
-.list-element-line {
+header nav .list-element-line {
     width: 100%;
     margin: auto;
     border-bottom: 1px solid #ccc;
 }
 
 /* 英文字樣式修正 */
-li .enText {
+header nav li .enText {
     display: flex;
     margin-left: 2px;
 }
 
 /* 右下logo設定 */
-li img {
+header nav li img {
     float: right;
     width: 100px;
 }
 
 /* logo與li水平排列 */
-.menu .contact-link {
+header nav .menu .contact-link {
     float: left;
 }
 
@@ -483,7 +450,6 @@ li img {
     .logo-right {
         display: none;
     }
-
 }
 
 /* menu end */
