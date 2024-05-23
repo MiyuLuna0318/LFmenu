@@ -238,7 +238,7 @@ header nav .label-container {
 header nav .label-container span {
     position: absolute;
     z-index: 1000;
-    margin: 40px 50px;
+    margin: 40px 17px;
     right: 0;
     display: flex;
     justify-content: center;
@@ -309,7 +309,7 @@ header nav .label-container span::after {
     z-index: 999;
     /* 畫面靠右 */
     right: 0;
-    margin: 30px;
+    margin: 30px 15px 0 0;
     padding: 0 30px;
 }
 
@@ -424,8 +424,6 @@ header nav .menu .contact-link {
         height: 80%;
         width: 55%;
     }
-
-
 }
 
 /* 小型手機 576px 以下 */
