@@ -238,7 +238,7 @@ header nav .label-container {
 header nav .label-container span {
     position: absolute;
     z-index: 1000;
-    margin: 40px 17px;
+    margin: 17px;
     right: 0;
     display: flex;
     justify-content: center;
@@ -309,7 +309,7 @@ header nav .label-container span::after {
     z-index: 999;
     /* 畫面靠右 */
     right: 0;
-    margin: 30px 15px 0 0;
+    margin: 10px;
     padding: 0 30px;
 }
 
@@ -405,11 +405,11 @@ header nav .menu .contact-link {
 /* 平板 (769-) 992px */
 @media (max-width: 992px) {
     .menu {
-        width: 55%;
+        width: 43%;
     }
 
     input:checked~.menu {
-        width: 55%;
+        width: 43%;
         height: 80%;
     }
 }
@@ -417,12 +417,12 @@ header nav .menu .contact-link {
 /* 手機 (577-) 768px */
 @media (max-width: 768px) {
     .menu {
-        width: 55%;
+        width: 53%;
     }
 
     input:checked~.menu {
         height: 80%;
-        width: 55%;
+        width: 53%;
     }
 }
 
