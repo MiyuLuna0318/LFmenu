@@ -393,7 +393,9 @@ header nav .menu .contact-link {
     float: left;
 }
 
-
+.menu .enText {
+    font-family: "Noto Sans TC", sans-serif;
+}
 
 /* RWD 斷點 */
 /* 電腦 1200px以上 */
